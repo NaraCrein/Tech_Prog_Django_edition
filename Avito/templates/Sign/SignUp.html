@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" content="height=device-height">
+    <title>Регистрация</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="{% static 'Avito/css/styleup.css' %}" rel="stylesheet">
+    <script src="{% static 'Avito/js/signUp.js' %}"></script>
+</head>
+<body>
+<div class="block">
+    <div class="form" action="">
+        <p class="in">Регистрация</p>
+        <p class="Text">Логин</p>
+        <p><input id="in" class="inp" type="text"></p>
+        <p class="Text">Пароль</p>
+        <p><input id="first" class="inp" type="password"></p>
+        <p class="Text">Повторите пароль</p>
+        <p><input id="second" class="inp" type="password"></p>
+        <p  class="wrong">Пароли не совпадают</p>
+        <p><strong><input onclick="check()" class="submit" type="button" value="Зарегистрироваться"></strong></p>
+        <p>Уже есть аккаунт? <a href="SignIn.html" style="font-weight: bold">Войти</a> </p>
+    </div>
+
+</div>
+</body>
+</html>

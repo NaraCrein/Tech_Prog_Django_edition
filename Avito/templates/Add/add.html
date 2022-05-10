@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Добавить объявление</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="{% static 'Avito/css/add.css' %}" rel="stylesheet">
+    <script type="text/javascript" src="{% static 'Avito/js/add.js' %}"></script>
+</head>
+<body>
+<header class="header">
+    <img id="img" src="images/Ellipse_1.png" alt="profile image"> <!--  onclick="goToProfile() -->
+    <span id="profile" onclick="goToSign()">Профиль</span>
+    <span class="search">
+        <input id="sr_txt" type="text"></input>
+        <img id="search_img" src="images/Vector.png" alt="search image">
+    </span>
+</header>
+<div class="add_info">
+    <div>
+        <h1>Разместить объявление</h1>
+    </div>
+    <div>
+        <h4>Название</h4>
+        <input name="name" type="text" required>
+    </div>
+    <div>
+        <h4>Цена</h4>
+        <input name="price" type="number" min="0" required>
+    </div>
+    <div>
+        <h4>Местоположение</h4>
+        <input name="place" type="text" required>
+    </div>
+    <h4>Фото</h4>
+    <div class="photo">
+        <input name="photo_1" type="image" src="images/plus.png">
+        <input name="photo_2" type="image" src="images/plus.png">
+        <input name="photo_3" type="image" src="images/plus.png">
+    </div>
+    <div id="description">
+        <h4>Описание</h4>
+        <input name="description" type="text" required>
+    </div>
+    <div id="submit">
+        <input type="submit" value="Разместить объявление">
+    </div>
+</div>
+</body>
+</html>

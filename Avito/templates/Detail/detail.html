@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Студенческая доска объявлений</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="{% static 'Avito/css/detail.css' %}" rel="stylesheet">
+    <script type="text/javascript" src="{% static 'Avito/js/detail.js' %}"></script>
+</head>
+<body>
+<header class="header">
+    <img id="img" src="{% static 'Avito/imgs/Ellipse_1.png' %}" alt="profile image" onclick="goToSign()">
+    <span id="profile" onclick="goToSign()">Профиль</span>
+    <span class="search">
+        <span id="sr_txt">Поиск</span>
+        <img id="search_img" src="{% static 'Avito/imgs/Vector.png' %}" alt="search image">
+    </span>
+</header>
+<div id="main_center">
+<H1 class="title">Кухонный стол и стулья</H1>
+<div>
+    <span id="imgGallery"><img id="prev_btn" src="{% static 'Avito/imgs/prev.png' %}" onclick="goBack()"><img id="image_in_gallery" src="{% static 'Avito/imgs/chairs.png' %}"><img id="next_btn" src="{% static 'Avito/imgs/next.png' %}" onclick="goNext()"> </span>
+    <span id="contacts">
+        <div id="contacts_dsc">
+            <div class="txt_cont">800 pуб.</div>
+            <div class="txt_cont">Имярек</div>
+            <div>Рейтинг продавца:</div>
+            <img id="1" class="star" src="{% static 'Avito/imgs/Star.png' %}" onclick="lightStar(1)">
+            <img id="2" class="star" src="{% static 'Avito/imgs/Star.png' %}" onclick="lightStar(2)">
+            <img id="3" class="star" src="{% static 'Avito/imgs/Star.png' %}" onclick="lightStar(3)">
+            <img id="4" class="star" src="{% static 'Avito/imgs/Star.png' %}" onclick="lightStar(4)">
+            <img id="5" class="star" src="{% static 'Avito/imgs/Star.png' %}" onclick="lightStar(5)">
+            <div id="dv">
+                <img src="{% static 'Avito/imgs/map.png' %}" display="table-cell">
+                <span id="map_txt">Общежитие №3</span>
+            </div>
+        </div>
+        <div id="show" onclick="showContacts()">
+            <span id="show_txt" onclick="showContacts()">Связаться с продавцом</span>
+        </div>
+    </span>
+</div>
+<H1 id="title_dsc">Описание товара</H1>
+<div id="description">
+    <span id="description_txt">
+        Продам кухонный стол и 4 стула к нему в хорошем состоянии. Сделаны из дерева. Продаю, так как переезжаю. Возможен торг.
+    </span>
+</div>
+</div>
+</body>
+</html>

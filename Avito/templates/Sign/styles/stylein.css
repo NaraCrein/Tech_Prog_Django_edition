@@ -1,0 +1,169 @@
+html,body{
+    color: #fff;
+    font-family: "Roboto Light",sans-serif;
+}
+
+a:hover{
+    color: #fff;
+}
+a{
+    color: #fff;
+    width: 150px;
+}
+
+.block{
+    max-width: 800px;
+    height: 500px;
+    background-color: #4f4fe5;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 20%;
+    border-radius: 50px;
+}
+
+/*Адаптивная ширина*/
+@media (max-width: 580px) {
+    .block{
+        max-width: 550px;
+    }
+    .inp{
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 500px) {
+    .block{
+        max-width: 400px;
+    }
+
+
+}
+
+@media (max-width: 420px) {
+    .block{
+        max-width: 350px;
+    }
+
+}
+
+@media (max-width: 355px) {
+    .block{
+        max-width: none;
+        max-height: none;
+    }
+
+
+}
+
+
+/*Адаптивная высота*/
+@media (max-height: 650px) {
+    .block{
+        max-height: 600px;
+    }
+
+}
+
+@media (max-height: 620px) {
+    .block{
+        max-height: 550px;
+    }
+
+}
+
+@media (max-height: 570px) {
+    .block{
+        max-height: 500px;
+    }
+
+}
+
+@media (max-height: 520px) {
+    .block{
+        max-height: none;
+
+    }
+
+
+}
+
+form{
+    margin: 0 auto;
+    position: absolute;
+    left: 20px;
+    text-align: center;
+    right: 0;
+    max-width: 500px;
+    height: 500px;
+    top: 2%;
+}
+p.Text{
+    text-align: left;
+    color:#fff;
+
+    margin-top: 30px;
+}
+
+.in{
+    color: #fff;
+
+    font-weight: bold;
+}
+
+.inp{
+    display: block ;
+    width: 100% ;
+    height: calc(2.25rem + 2px);
+    margin: 0;
+    padding: 0.375rem 0.75rem;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5 ;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box ;
+    border: 1px solid #bdbdbd;
+    border-radius: 0.7rem ;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.check{
+
+    position: relative;
+    vertical-align: middle;
+    bottom: 1px;
+
+    text-align: left;
+    color: #fff;
+}
+.checkbox{
+    text-align: left;
+}
+
+.submit{
+    display: block ;
+    width: 75% ;
+    margin:0 auto 50px  auto;
+
+    height: 55px;
+    font-weight: bolder;
+    padding: 0.375rem 0.75rem;
+    font-family: inherit;
+    font-size: 1rem;
+    line-height: 1.5 ;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box ;
+    border: 1px solid #bdbdbd;
+    border-radius: 2rem ;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.link{
+    font-weight: bold;
+    color: #fff;
+    text-align: right;
+
+}

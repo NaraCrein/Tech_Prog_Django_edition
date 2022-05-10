@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Студенческая доска объявлений</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="{% static 'Avito/css/main.css' %}" rel="stylesheet">
+    <script type="text/javascript" src="{% static 'Avito/js/main.js' %}"></script>
+</head>
+<body>
+<header class="header">
+    <img id="img" src="{% static 'Avito/imgs/Ellipse_1.png' %}" alt="profile image" onclick="goToSign()">
+    <span id="profile" onclick="goToSign()">Профиль</span>
+    <span class="search">
+        <input id="sr_txt" type="text">
+        <img id="search_img" src="{% static 'Avito/imgs/Vector.png' %}" alt="search image">
+    </span>
+</header>
+<H2 id="title_main" >Доска объявлений для общежитий</H2>
+<div id="main_list">
+{% block content %}
+    <table>
+        <tr>
+            {% if Ad_list %}
+                {% for Ad in Ad_list %}
+            <th id="1" onclick="goToDetail()"><img class="image" src="{{Ad.image}}" alt="no photo"><div class="name">{{   Ad.name }}</div><div class="price">{{   Ad.price }}</div></th>
+                {% endfor %}
+            {% endif %}
+            <th id="2" onclick="goToDetail()"><img class="image" src="images/table.png" alt="no photo"><div class="name">Table</div><div class="price">Price</div></th>
+            <th id="3" onclick="goToDetail()"><img class="image" src="images/table.png" alt="no photo"><div class="name">Table</div><div class="price">Price</div></th>
+        </tr>
+        <tr>
+            <th id="4" onclick="goToDetail()"><img class="image" src="images/table.png" alt="no photo"><div class="name">Table</div><div class="price">Price</div></th>
+            <th id="5" onclick="goToDetail()"><img class="image" src="images/table.png" alt="no photo"><div class="name">Table</div><div class="price">Price</div></th>
+            <th id="6" onclick="goToDetail()"><img class="image" src="images/table.png" alt="no photo"><div class="name">Table</div><div class="price">Price</div></th>
+        </tr>
+    </table>
+{% endblock%}
+</div>
+</body>
+</html>

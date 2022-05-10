@@ -1,0 +1,133 @@
+html, body{
+    color: #fff;
+    font-family: "Inter",sans-serif;
+}
+.header{
+    background:#4A73DC;
+    padding: 10px 10px 10px 30px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+#img{
+    vertical-align:middle;
+}
+#profile{
+    vertical-align: middle;
+}
+.search{
+    position: fixed;
+    right:30px;
+    width: 300px;
+    height: 40px;
+    border: 3px solid #FFFFFF;
+    border-radius: 30px;
+    vertical-align:middle;
+}
+#sr_txt{
+    position:absolute;
+    top:30%;
+    padding-left:20px;
+}
+#search_img{
+    position: absolute;
+    margin:4px;
+    right:16px;
+}
+#main_center{
+    width:1100px;
+    align-self: center;
+    margin-right: auto;
+    margin-left: auto;
+}
+.title{
+    color:#212529;
+    margin-left: 30px;
+    margin-top:15vh;
+    font-weight: lighter;
+}
+#imgGallery{
+    position: absolute;
+    width: 550px;
+    height:350px;
+    background: #D1D4D3;
+    border: 3px solid #D1D4D3;
+    border-radius: 30px;
+    margin-left:30px;
+}
+#imgGallery img{
+    margin-top:25px;
+    margin-left: 12px;
+    margin-bottom: auto;
+    vertical-align: middle;
+}
+#prev_btn{
+    float:left;
+    vertical-align: middle;
+}
+#next_btn{
+    float:right;
+    vertical-align: middle;
+}
+#contacts{
+    float: right;
+    width: 400px;
+    height: 350px;
+}
+#contacts_dsc{
+    color: #212529;
+    border: 3px solid #4A73DC;
+    border-radius: 30px;
+    padding:20px;
+}
+.txt_cont{
+    font-size: xx-large;
+    padding-bottom:15px;
+}
+#dv{
+    display: table;
+}
+#map_txt{
+    margin-left:20px;
+    font-size: large;
+    display: table-cell;
+    vertical-align: middle;
+}
+#show{
+    margin-top:10px;
+    display: table;
+    width: inherit;
+    height:55px;
+    background: #4A73DC;
+    border: 3px solid #4A73DC;
+    border-radius: 30px;
+}
+#show_txt{
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    font-size: x-large;
+}
+#title_dsc{
+    color:#212529;
+    margin-left: 30px;
+    margin-top:55vh;
+    font-weight: lighter;
+}
+#description{
+    height: 4vh;
+    border: 3px solid #4A73DC;
+    border-radius: 30px;
+    color:#212529;
+    margin-left: auto;
+    margin-right:auto;
+    font-weight: lighter;
+    display: table;
+    align-content: center;
+}
+#description_txt{
+    display: table-cell;
+    vertical-align: middle;
+    padding: 20px;
+}

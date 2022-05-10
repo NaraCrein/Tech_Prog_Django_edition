@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" content="height=device-height">
+    <title>Восстановление</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="{% static 'Avito/css/stylereset.css' %}" rel="stylesheet">
+    <script src="{% static 'Avito/js/Reset.js' %}"></script>
+</head>
+<body>
+<div class="block">
+    <div class="form" action="">
+        <p class="in">Введите новый пароль</p>
+        <p class="Text">Введите новый пароль</p>
+        <p><input id="first" class="inp" type="password"></p>
+        <p class="Text">Повторите пароль</p>
+        <p><input id="second" class="inp" type="password"></p>
+        <p><strong><input onclick="reset()" class="reset" type="submit" value="Восстановить"></strong></p>
+    </div>
+</div>
+</body>
+</html>

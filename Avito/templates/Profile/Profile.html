@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" content="height=device-height">
+    <title>Профиль</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="{% static 'Avito/css/profile.css' %}" rel="stylesheet">
+    <script type="text/javascript" src="{% static 'Avito/js/Profile.js' %}"></script>
+</head>
+<body>
+<div class="block">
+    <div class="form" id="form">
+        <p class="in">Имя пользователя</p>
+        <p class="Text">Email</p>
+        <p><input class="inp" type="text" disabled></p>
+        <p class="Text">Телефон</p>
+        <input class="inp" id="inp1" type="number" pattern="[0-9]*" data-politespace data-grouplength="3" data-delimiter="," data-reverse value="" disabled/>
+        <p><strong><input onclick="change()" class="submit" id="change" type="submit" value="Редактировать" style="margin-top: 50px"></strong></p>
+<strong><input onclick="createNote()" class="submit" type="button" value="Создать объявление"></input></strong>
+        <strong><input onclick="returns()" class="submit" type="button" value="Вернуться"></input></strong>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <link type="text/css" href="{% static 'Avito/css/main.css' %}", rel="stylesheet">
+</head>
+<body>
+    {% if Ad_list %}
+        {% for Ad in Ad_list %}
+            <ul class="list-group">
+            <li class="list-group-item">
+            {{ Ad.image }}
+            </li>
+            </ul>
+        {% endfor %}
+
+    {% endif %}
+</body>
+</html>
