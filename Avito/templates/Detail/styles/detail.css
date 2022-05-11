@@ -109,10 +109,25 @@ html, body{
     text-align: center;
     font-size: x-large;
 }
+#report{
+    margin-top:10px;
+    display: table;
+    width: inherit;
+    height:55px;
+    background: #4A73DC;
+    border: 3px solid #4A73DC;
+    border-radius: 30px;
+}
+#report_txt{
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    font-size: x-large;
+}
 #title_dsc{
     color:#212529;
     margin-left: 30px;
-    margin-top:55vh;
+    margin-top:60vh;
     font-weight: lighter;
 }
 #description{

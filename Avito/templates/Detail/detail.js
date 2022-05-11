@@ -7,6 +7,9 @@ function goToSign(flag) {
 function showContacts(){
     document.getElementById("show_txt").innerHTML="+79200000000";
 }
+function report(){
+    document.getElementById("report_txt").innerHTML="Ваша жалоба принята на рассмотрение";
+}
 function lightStar(id_star){
     if (id_star>=1){
         document.getElementById("1").src="../images/Star_full.png"
