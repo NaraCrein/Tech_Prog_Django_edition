@@ -1,11 +1,14 @@
+function Detail()
+{
+    window.location.href = "/detail"
+}
 
-function goToSign(flag) {
+function Sign(flag)
+{
     if (flag){
-        window.location.href = 'profile';
+        window.location.href = '/profile';
     }
-    window.location.href = 'signin';
+    else
+        window.location.href = '/signin';
 }
 
-function Detail(id_ad){
-    window.location.href = 'detail';
-}

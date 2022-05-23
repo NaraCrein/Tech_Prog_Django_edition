@@ -26,7 +26,7 @@ function check()
     {
         document.querySelector('.wrong').style.display = "none"
         document.querySelector('.block').style.height = "580px"
-        window.location.href = '../Profile/Profile.html'
+        window.location.href = '/profile'
     }
 
 

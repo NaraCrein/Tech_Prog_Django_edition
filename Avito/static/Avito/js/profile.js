@@ -1,9 +1,9 @@
- function returns()
+ function Treturn()
 {
-    window.location.href = '../Main/main.html';
+    window.location.href = '/';
 }
 
-function change()
+function Change()
 {
     if (document.querySelector('#change').value === "Редактировать")
     {
@@ -19,7 +19,7 @@ function change()
     }
 }
 
-function createNote()
+function CreateNote()
 {
-    window.location.href = '../Add/add.html'
+    window.location.href = '/add'
 }

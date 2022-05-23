@@ -1,4 +1,4 @@
-function signIn()
+function signi()
 {
     if (document.getElementById('in').value == "")
     {
@@ -11,5 +11,5 @@ function signIn()
         return
     }
 
-        window.location.href = '../Profile/Profile.html'
+        window.location.href = '/profile'
 }
