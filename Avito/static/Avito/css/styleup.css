@@ -85,7 +85,7 @@ a{
     top: 20%;
     border-radius: 50px;
 }
-.form{
+form{
     margin: 0 auto;
     position: absolute;
     left: 20px;
@@ -95,12 +95,11 @@ a{
     height: 500px;
     top: 2%;
 }
-p.Text{
+input{
     text-align: left;
     color:#fff;
     margin-top: 30px;
 }
-
 .in{
     color: #fff;
     font-weight: bold;
