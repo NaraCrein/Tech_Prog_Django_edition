@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Мои объявления</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/myAds.css">
+    <script defer type="text/javascript" src="myAds.js"></script>
+</head>
+    <body>
+        <header class="header">
+            <img id="img" src="/Main/images/Ellipse_1.png" alt="profile image" onclick="goToProfile()">
+            <span id="profile" onclick="goToSign()">Профиль</span>
+            <span class="search">
+                <span id="sr_txt">Поиск</span>
+                <img id="search_img" src="/Main/images/Vector.png" alt="search image">
+            </span>
+        </header>
+        <h2 id="title_myAds">Мои объявления</h2>
+        <div id="my_Ads">
+            <div class="ad" onclick="goToDetail()">
+                <img class="image" src="/Main/images/table.png" alt="no photo">
+                <div class="name">Table</div>
+                <div class="price">Price</div>
+                <button onClick="goToEdit()">Изменить</button>
+            </div>
+        </div>
+    </body>
+</html>
