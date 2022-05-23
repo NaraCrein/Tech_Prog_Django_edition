@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,42 +7,39 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <link href="styles/detail.css" rel="stylesheet">
-    <script type="text/javascript" src="detail.js"></script>
+    <link href="{% static 'Avito/css/detail.css' %}" rel="stylesheet">
+    <script type="text/javascript" src="{% static 'Avito/js/Tdetail.js' %}"></script>
 </head>
 <body>
 <header class="header">
-    <img id="img" src="/images/Ellipse_1.png" alt="profile image" onclick="goToSign()">
-    <span id="profile" onclick="goToSign()">Профиль</span>
+    <img id="img" src="{% static 'Avito/imgs/Ellipse_1.png' %}" alt="profile image" onclick="Sign()">
+    <span id="profile" onclick="Sign()">Профиль</span>
     <span class="search">
         <span id="sr_txt">Поиск</span>
-        <img id="search_img" src="../images/Vector.png" alt="search image">
+        <img id="search_img" src="{% static 'Avito/imgs/Vector.png' %}" alt="search image">
     </span>
 </header>
 <div id="main_center">
 <H1 class="title">Кухонный стол и стулья</H1>
 <div>
-    <span id="imgGallery"><img id="prev_btn" src="../images/prev.png" onclick="goBack()"><img id="image_in_gallery" src="../images/chairs.png"><img id="next_btn" src="../images/next.png" onclick="goNext()"> </span>
+    <span id="imgGallery"><img id="prev_btn" src="{% static 'Avito/imgs/prev.png' %}" onclick="Back()"><img id="image_in_gallery" src="{% static 'Avito/imgs/chairs.png' %}"><img id="next_btn" src="{% static 'Avito/imgs/next.png' %}" onclick="Next()"> </span>
     <span id="contacts">
         <div id="contacts_dsc">
             <div class="txt_cont">800 pуб.</div>
             <div class="txt_cont">Имярек</div>
             <div>Рейтинг продавца:</div>
-            <img id="1" class="star" src="../images/Star.png" onclick="lightStar(1)">
-            <img id="2" class="star" src="../images/Star.png" onclick="lightStar(2)">
-            <img id="3" class="star" src="../images/Star.png" onclick="lightStar(3)">
-            <img id="4"  class="star" src="../images/Star.png" onclick="lightStar(4)">
-            <img id="5" class="star" src="../images/Star.png" onclick="lightStar(5)">
+            <img id="1" class="star" src="{% static 'Avito/imgs/Star.png' %}" onclick="Star(1)">
+            <img id="2" class="star" src="{% static 'Avito/imgs/Star.png' %}" onclick="Star(2)">
+            <img id="3" class="star" src="{% static 'Avito/imgs/Star.png' %}" onclick="Star(3)">
+            <img id="4" class="star" src="{% static 'Avito/imgs/Star.png' %}" onclick="Star(4)">
+            <img id="5" class="star" src="{% static 'Avito/imgs/Star.png' %}" onclick="Star(5)">
             <div id="dv">
-                <img src="../images/map.png" display="table-cell">
+                <img src="{% static 'Avito/imgs/map.png' %}" display="table-cell">
                 <span id="map_txt">Общежитие №3</span>
             </div>
         </div>
-        <div id="show" onclick="showContacts()">
-            <span id="show_txt" onclick="showContacts()">Связаться с продавцом</span>
-        </div>
-        <div id="report" onclick="report()">
-            <span id="report_txt" onclick="report()">Пожаловаться</span>
+        <div id="show" onclick="Contacts()">
+            <span id="show_txt" onclick="Contacts()">Связаться с продавцом</span>
         </div>
     </span>
 </div>

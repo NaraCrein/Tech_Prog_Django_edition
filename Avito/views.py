@@ -1,10 +1,15 @@
+from django.contrib.auth.forms import UserCreationForm
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.template import loader
+from django.urls import reverse_lazy
+from django.views.generic import CreateView
 
 from Avito.models import Ad
+from .forms import RegisterUserForm
 
 from .models import Ad
+from .utils import DataMixin
 
 
 def Detail(request):
@@ -44,9 +49,8 @@ def SignUp(request):
     return render(request, 'Sign/SignUp.html')
 
 
-
-
-
-
-
-
+class RegisterUser(CreateView):
+    form_class = RegisterUserForm
+    template_name = "Sign/SignUp.html"
+    success_url = reverse_lazy('signin')
+1
