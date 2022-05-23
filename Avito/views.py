@@ -1,12 +1,12 @@
 from django.contrib.auth import logout
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.views import LoginView
+from django.db.models import Q
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.template import loader
 from django.urls import reverse_lazy
-from django.views.generic import CreateView
-
+from django.views.generic import CreateView, ListView
 from Avito.models import Ad
 from .forms import RegisterUserForm, LoginUserForm
 
@@ -51,6 +51,18 @@ def SignUp(request):
     return render(request, 'Sign/SignUp.html')
 
 
+class SearchResultsView(ListView):
+    model = Ad
+    template_name = 'search_results.html'
+
+    def get_queryset(self):
+        query = self.request.GET.get('q')
+        object_list = Ad.objects.filter(
+            Q(name__icontains=query) | Q(price__icontains=query)
+        )
+        return object_list
+
+
 class RegisterUser(CreateView):
     form_class = RegisterUserForm
     template_name = "Sign/SignUp.html"
@@ -61,9 +73,9 @@ class LoginUser(LoginView):
     form_class = LoginUserForm
     template_name = 'Sign/SignIn.html'
 
-
     def get_success_url(self):
         return reverse_lazy('profile')
+
 
 def logout_user(request):
     logout(request)

@@ -20,7 +20,9 @@
         {% endif %}
 
     <span class="search">
-        <input id="sr_txt" type="text">
+        <form action="{% url 'search_results' %}" method="get">
+            <input name="q" id= "sr_txt" type="text" placeholder="Search...">
+        </form>
         <img id="search_img" src="{% static 'Avito/imgs/Vector.png' %}" alt="search image">
     </span>
 </header>
@@ -30,17 +32,23 @@
     <table>
         <tr>
             {% if Ad_list %}
-                {% for Ad in Ad_list %}
-            <th id="1" onclick="Detail()"><img class="image" src="{{Ad.image}}" alt="no photo"><div class="name">{{   Ad.name }}</div><div class="price">{{   Ad.price }}</div></th>
-                {% endfor %}
+            {% for Ad in Ad_list %}
+            {% if Ad.id != 4 and Ad.id != 7 and Ad.id != 10 %}
+            <th onclick="Detail(Ad.id)"><img class="image" src="{{Ad.image}}" alt="no photo">
+                <div class="name">{{ Ad.name }}</div>
+                <div class="price">{{ Ad.price }}</div>
+            </th>
             {% endif %}
-            <th id="2" onclick="Detail()"><img class="image" src="images/table.png" alt="no photo"><div class="name">Table</div><div class="price">Price</div></th>
-            <th id="3" onclick="Detail()"><img class="image" src="images/table.png" alt="no photo"><div class="name">Table</div><div class="price">Price</div></th>
-        </tr>
-        <tr>
-            <th id="4" onclick="Detail()"><img class="image" src="images/table.png" alt="no photo"><div class="name">Table</div><div class="price">Price</div></th>
-            <th id="5" onclick="Detail()"><img class="image" src="images/table.png" alt="no photo"><div class="name">Table</div><div class="price">Price</div></th>
-            <th id="6" onclick="Detail()"><img class="image" src="images/table.png" alt="no photo"><div class="name">Table</div><div class="price">Price</div></th>
+            {% if Ad.id == 4 or Ad.id == 7 or Ad.id == 10 %}
+            </tr>
+            <tr>
+                <th onclick="Detail(Ad.id)"><img class="image" src="{{Ad.image}}" alt="no photo">
+                    <div class="name">{{ Ad.name }}</div>
+                    <div class="price">{{ Ad.price }}</div>
+                </th>
+            {% endif %}
+            {% endfor %}
+            {% endif %}
         </tr>
     </table>
 {% endblock%}
