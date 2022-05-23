@@ -6,6 +6,6 @@ function goToSign(flag) {
     window.location.href = 'signin';
 }
 
-function goToDetail(){
+function Detail(id_ad){
     window.location.href = 'detail';
 }

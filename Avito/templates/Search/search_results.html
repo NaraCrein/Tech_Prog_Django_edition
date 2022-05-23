@@ -1,0 +1,9 @@
+<h1>Search Results</h1>
+
+<ul>
+  {% for ad in Ad_list %}
+  <li>
+    {{ ad.name }}, {{ ad.price }}
+  </li>
+  {% endfor %}
+</ul>
