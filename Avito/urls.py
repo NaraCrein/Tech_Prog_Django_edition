@@ -10,8 +10,9 @@ urlpatterns = [
     path('add/', Add),
     path('forgot/', Forgot),
     path('reset/', Reset),
-    path('profile/', Profile),
-    path('signin/', SignIn, name='signin'),
-    path('signup/', RegisterUser.as_view(), name = 'register'),
+    path('profile/', Profile, name='profile'),
+    path('signin/', LoginUser.as_view(), name='signin'),
+    path('signup/', RegisterUser.as_view(), name='register'),
+    path('logout/', logout_user, name='logout'),
 
 ]

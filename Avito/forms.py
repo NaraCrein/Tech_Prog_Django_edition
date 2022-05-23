@@ -1,5 +1,5 @@
 from django import forms
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
 from django.forms import ModelForm
 
@@ -18,9 +18,9 @@ class AdForm(ModelForm):
 
 
 class RegisterUserForm(UserCreationForm):
-    username = forms.CharField(label='Логин',widget=forms.TextInput(attrs={'class': 'inp'}))
-    password1 = forms.CharField(label='Пароль',widget=forms.PasswordInput(attrs={'class': 'inp'}))
-    password2 = forms.CharField(label='Повторите пароль',widget=forms.PasswordInput(attrs={'class': 'inp'}))
+    username = forms.CharField(label='Логин', widget=forms.TextInput(attrs={'class': 'inp'}))
+    password1 = forms.CharField(label='Пароль', widget=forms.PasswordInput(attrs={'class': 'inp'}))
+    password2 = forms.CharField(label='Повторите пароль', widget=forms.PasswordInput(attrs={'class': 'inp'}))
 
     class Meta:
         model = User
@@ -32,3 +32,8 @@ class RegisterUserForm(UserCreationForm):
             'password2': forms.PasswordInput(attrs={'class': 'inp'})
 
         }
+
+
+class LoginUserForm(AuthenticationForm):
+    username = forms.CharField(label='Логин', widget=forms.TextInput(attrs={'class': 'inp'}))
+    password = forms.CharField(label='Пароль', widget=forms.PasswordInput(attrs={'class': 'inp'}))

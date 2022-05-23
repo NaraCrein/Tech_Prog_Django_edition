@@ -13,7 +13,11 @@
 <body>
 <header class="header">
     <img id="img" src="{% static 'Avito/imgs/Ellipse_1.png' %}" alt="profile image" onclick="Sign()">
-    <span id="profile" onclick="Sign()">Профиль</span>
+    {% if request.user.is_authenticated %}
+       <span id="profile"><a href="{% url 'profile' %}">Профиль</a> </span>
+    {% else %}
+    <span><a href="{% url 'signin' %}">Профиль</a> </span>
+        {% endif %}
     <span class="search">
         <span id="sr_txt">Поиск</span>
         <img id="search_img" src="{% static 'Avito/imgs/Vector.png' %}" alt="search image">
