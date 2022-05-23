@@ -8,20 +8,28 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <link href="{%  static 'Avito/css/stylein.css' %}" rel="stylesheet">
+    <link href="{%  static 'Avito/css/tSignin.css' %}" rel="stylesheet">
     <script src="{% static  'Avito/js/signIn.js' %}"></script>
 </head>
 <body>
 <div class="block">
-    <form action="">
+    <form method="post">
+        {% csrf_token %}
         <p class="in">Вход</p>
-        <p class="Text">Логин</p>
+        <!--<p class="Text">Логин</p>
         <p><input id="in" class="inp" type="text"></p>
         <p class="Text">Пароль</p>
         <p><input class="inp" id="pass" type="password"></p>
         <p class="link"><a href="/forgot">Забыли пароль?</a></p>
         <p class="checkbox"><input class="check" type="checkbox">Запомнить меня</p>
         <p><strong><input class="submit" onclick="signi()" type="button" value="Войти"></strong></p>
+        <p>Нет аккаунта? <a href="/signup" style="font-weight: bold" >Регистрация</a> </p>-->
+        <div class="form-error">{{ form.non_field_errors}}</div>
+        {% for f in form %}
+        <p><p class="Thetext" for="{{ f.id_for_label }}">{{f.label}} </p>{{f}}</p>
+        <div class="form-error">{{ f.errors }}</div>
+        {% endfor %}
+        <button class="tsubmit" type="submit">Войти</button>
         <p>Нет аккаунта? <a href="/signup" style="font-weight: bold" >Регистрация</a> </p>
     </form>
 </div>
