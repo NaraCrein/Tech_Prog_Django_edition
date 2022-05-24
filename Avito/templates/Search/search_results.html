@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <link href="{% static 'Avito/css/main.css' %}" rel="stylesheet">
+    <link href="{% static 'Avito/css/search.css' %}" rel="stylesheet">
     <script type="text/javascript" src="{% static 'Avito/js/main.js' %}"></script>
 </head>
 <body>
@@ -30,17 +30,17 @@
 <div id="main_list">
 {% block content %}
 {% if object_list %}
-<ul>
+<ol class="list-res">
   {% for ad in object_list %}
   <li>
+      <p onclick="Detail({{ad.id}})"><img onclick="Detail()" class="image" src="{{ad.image}}" alt="no photo"></p>
     <div onclick="Detail({{ad.id}})" class="name">{{ ad.name }}</div>
       <div onclick="Detail({{ad.id}})" class="price">{{ ad.price }}</div>
-    <p onclick="Detail({{ad.id}})"><img onclick="Detail()" class="image" src="{{ad.image}}" alt="no photo"></p>
   </li>
   {% endfor %}
-</ul>
+</ol>
     {% else%}
-    <H1> Ничего не найдено</H1>
+    <H1 id="nothing"> Ничего не найдено</H1>
     {% endif %}
 {% endblock%}
 </div>
