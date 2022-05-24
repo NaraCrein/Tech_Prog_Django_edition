@@ -131,3 +131,11 @@ html, body{
     vertical-align: middle;
     padding: 20px;
 }
+::placeholder{
+    color: #FFFFFF;
+    font-weight: bold;
+}
+.prof_txt{
+    color: #FFFFFF;
+    font-weight: bold;
+}

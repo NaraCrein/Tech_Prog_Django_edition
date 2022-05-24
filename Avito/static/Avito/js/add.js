@@ -4,3 +4,7 @@ function goToSign(flag) {
     }
     window.location.href = '../Sign/SignIn.html';
 }
+function Thereturn()
+{
+    window.location.href = '/';
+}

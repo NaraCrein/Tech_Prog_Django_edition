@@ -47,7 +47,7 @@ class AddAdForm(forms.ModelForm):
     name = forms.CharField(label='Название', widget=forms.TextInput(attrs={'class': 'inp'}))
     price = forms.IntegerField(label='Цена', widget=forms.NumberInput(attrs={'class': 'inp'}))
     place = forms.CharField(label='Местонахождение', widget=forms.TextInput(attrs={'class': 'inp'}))
-    desc = forms.CharField(label='Название', widget=forms.TextInput(attrs={'class': 'inp'}))
+    desc = forms.CharField(label='Описание', widget=forms.TextInput(attrs={'class': 'inp'}))
     image = forms.ImageField(label='Фото', widget=forms.FileInput(attrs={'class': 'inp'}))
     seller = forms.CharField(label='Имя продавца', widget=forms.TextInput(attrs={'class': 'inp'}))
 

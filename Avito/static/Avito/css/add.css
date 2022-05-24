@@ -185,8 +185,6 @@ form{
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
-
-
 .submit{
     display: block ;
     width: 75% ;

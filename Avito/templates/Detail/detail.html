@@ -12,36 +12,35 @@
 </head>
 <body>
 <header class="header">
-    <img id="img" src="{% static 'Avito/imgs/Ellipse_1.png' %}" alt="profile image" onclick="Sign()">
+    <img id="img" src="{% static 'Avito/imgs/Ellipse_1.png' %}" alt="profile image" onclick="goToSign()">
     {% if request.user.is_authenticated %}
-       <span id="profile"><a href="{% url 'profile' %}">Профиль</a> </span>
+    <span id="profile"><a class="prof_txt" href="{% url 'profile' %}">Профиль</a> </span>
     {% else %}
-    <span><a href="{% url 'signin' %}">Профиль</a> </span>
-        {% endif %}
+    <span><a class="prof_txt" href="{% url 'signin' %}">Профиль</a> </span>
+    {% endif %}
+
     <span class="search">
-        <span id="sr_txt">Поиск</span>
+        <form action="{% url 'search_results' %}" method="get">
+            <input name="q" id= "sr_txt" type="text" placeholder="Поиск...">
+        </form>
         <img id="search_img" src="{% static 'Avito/imgs/Vector.png' %}" alt="search image">
     </span>
 </header>
 <div id="main_center">
-<H1 class="title">Кухонный стол и стулья</H1>
+    {% block content %}
+    {% if object_ad %}
+    {% for ad in object_ad %}
+<H1 class="title">{{ad.name}}</H1>
 <div>
-    <span id="imgGallery"><img id="prev_btn" src="{% static 'Avito/imgs/prev.png' %}" onclick="Back()">
-        <img id="image_in_gallery" src="{{fad.image}}">
-        <img id="next_btn" src="{% static 'Avito/imgs/next.png' %}}" onclick="Next()"> </span>
+    <span id="imgGallery">
+        <img id="image_in_gallery" src="{{ad.image}}">
     <span id="contacts">
         <div id="contacts_dsc">
-            <div class="txt_cont">800 pуб.</div>
-            <div class="txt_cont">Имярек</div>
-<!--            <div>Рейтинг продавца:</div>-->
-<!--            <img id="1" class="star" src="{% static 'Avito/imgs/Star.png' %}" onclick="Star(1)">-->
-<!--            <img id="2" class="star" src="{% static 'Avito/imgs/Star.png' %}" onclick="Star(2)">-->
-<!--            <img id="3" class="star" src="{% static 'Avito/imgs/Star.png' %}" onclick="Star(3)">-->
-<!--            <img id="4" class="star" src="{% static 'Avito/imgs/Star.png' %}" onclick="Star(4)">-->
-<!--            <img id="5" class="star" src="{% static 'Avito/imgs/Star.png' %}" onclick="Star(5)">-->
+            <div class="txt_cont">{{ad.price}} pуб.</div>
+            <div class="txt_cont">{{ad.seller}}</div>
             <div id="dv">
                 <img src="{% static 'Avito/imgs/map.png' %}" display="table-cell">
-                <span id="map_txt">Общежитие №3</span>
+                <span id="map_txt">{{ad.place}}</span>
             </div>
         </div>
         <div id="show" onclick="Contacts()">
@@ -51,10 +50,11 @@
 </div>
 <H1 id="title_dsc">Описание товара</H1>
 <div id="description">
-    <span id="description_txt">
-        Продам кухонный стол и 4 стула к нему в хорошем состоянии. Сделаны из дерева. Продаю, так как переезжаю. Возможен торг.
-    </span>
+    <span id="description_txt">{{ad.desc}}</span>
 </div>
+    {% endfor %}
+    {% endif %}
+    {% endblock%}
 </div>
 </body>
 </html>

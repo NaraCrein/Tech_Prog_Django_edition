@@ -58,7 +58,6 @@ def Profile(request):
 def SignUp(request):
     return render(request, 'Sign/SignUp.html')
 
-
 class SearchResultsView(ListView):
     model = Ad
     template_name = 'Search/search_results.html'
@@ -73,6 +72,19 @@ class SearchResultsView(ListView):
         else:
             object_list = Ad.objects.all()
         return object_list
+
+class DetailView(ListView):
+    model = Ad
+    template_name = 'Detail/detail.html'
+
+    def get_queryset(self):
+        query = self.request.GET.get('q', '')
+
+        if query:
+            object_ad = Ad.objects.filter(id__icontains=query)
+        else:
+            object_ad = Ad.objects.all()
+        return object_ad
 
 
 class RegisterUser(CreateView):
