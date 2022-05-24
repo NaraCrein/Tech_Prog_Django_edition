@@ -18,6 +18,19 @@
         <img id="search_img" src="/Main/images/Vector.png" alt="search image">
     </span>
 </header>
+<div class="block">
+    <form method="post">
+        {% csrf_token %}
+
+        <p class="in">Регистрация</p>
+        {% for f in form %}
+        <p><p class="text" for="{{ f.id_for_label }}">{{f.label}} </p>{{f}}</p>
+        <div class="eerror">{{ f.errors }}</div>
+        {% endfor %}
+
+        <button class="submit" type="submit">Регистрация</button>
+        <p>Уже есть аккаунт? <a href="/signin" style="font-weight: bold">Войти</a> </p>
+    </form>
 <div>
     <form action="#" method="post" enctype="multipart/form-data">
         <div>

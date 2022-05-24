@@ -8,7 +8,7 @@ from django.template import loader
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, ListView
 from Avito.models import Ad
-from .forms import RegisterUserForm, LoginUserForm
+from .forms import RegisterUserForm, LoginUserForm, AddAdForm
 
 from .models import Ad
 from .utils import DataMixin
@@ -32,6 +32,14 @@ def SignIn(request):
 
 
 def Add(request):
+    if request.method == 'POST':
+        form = AddAdForm(request.POST, request.FILES)
+        if form.is_valid():
+            #print(form.cleaned_data)
+            form.save()
+            return redirect('home')
+    else:
+        form = AddAdForm()
     return render(request, 'Add/add.html')
 
 
@@ -84,3 +92,9 @@ class LoginUser(LoginView):
 def logout_user(request):
     logout(request)
     return redirect('signin')
+
+
+class AddAd(CreateView):
+    form_class = AddAdForm
+    template_name = "Add/add.html"
+    success_url = reverse_lazy('add')

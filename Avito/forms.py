@@ -41,3 +41,25 @@ class RegisterUserForm(UserCreationForm):
 class LoginUserForm(AuthenticationForm):
     username = forms.CharField(label='Логин', widget=forms.TextInput(attrs={'class': 'inp'}))
     password = forms.CharField(label='Пароль', widget=forms.PasswordInput(attrs={'class': 'inp'}))
+
+
+class AddAdForm(forms.ModelForm):
+    name = forms.CharField(label='Название', widget=forms.TextInput(attrs={'class': 'inp'}))
+    price = forms.IntegerField(label='Цена', widget=forms.NumberInput(attrs={'class': 'inp'}))
+    place = forms.CharField(label='Местонахождение', widget=forms.TextInput(attrs={'class': 'inp'}))
+    desc = forms.CharField(label='Название', widget=forms.TextInput(attrs={'class': 'inp'}))
+    image = forms.ImageField(label='Фото', widget=forms.FileInput(attrs={'class': 'inp'}))
+    seller = forms.CharField(label='Имя продавца', widget=forms.TextInput(attrs={'class': 'inp'}))
+
+    class Meta:
+        model = Ad
+        fields = ('name', 'price', 'desc', 'image', 'seller')
+        widgets = {
+            'name': forms.TextInput(attrs={'class': 'inp'}),
+            'price': forms.NumberInput(attrs={'class': 'inp'}),
+            'place': forms.TextInput(attrs={'class': 'inp'}),
+            'desc': forms.TextInput(attrs={'class': 'inp'}),
+            'image': forms.FileInput(attrs={'class': 'inp'}),
+            'seller': forms.TextInput(attrs={'class': 'inp'})
+
+        }
