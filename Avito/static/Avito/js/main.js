@@ -1,6 +1,9 @@
-function Detail()
+function Detail(id)
 {
-    window.location.href = "/detail"
+
+        window.location.href = `/detail/${id}`
+
+
 }
 
 function Sign(flag)
