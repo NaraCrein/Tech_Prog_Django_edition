@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Редактировать объявление</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="styles/editAd.css" rel="stylesheet">
+    <script defer type="text/javascript" src="editAd.js"></script>
+</head>
+<body>
+<header class="header">
+    <img id="img" src="/Main/images/Ellipse_1.png" alt="profile image"> <!--  onclick="goToProfile() -->
+    <span id="profile" onclick="goToSign()">Профиль</span>
+    <span class="search">
+        <input id="sr_txt" type="text"></input>
+        <img id="search_img" src="/Main/images/Vector.png" alt="search image">
+    </span>
+</header>
+<div>
+    <form action="#" method="post" enctype="multipart/form-data">
+        <div>
+            <h1>Редактировать объявление</h1>
+        </div>
+        <ul>
+            <li>
+                <label for="title">Название</label>
+                <input type="text" id="title" name="ad_title">
+            </li>
+            <li>
+                <label for="price">Цена</label>
+                <input type="number" id="price" name="ad_price">
+            </li>
+            <li>
+                <label for="location">Местоположение</label>
+                <input type="text" id="location" name="ad_location">
+            </li>
+            <li>
+                <label for="description">Описание</label>
+                <textarea id="description" name="ad_description"></textarea>
+            </li>
+            <li>
+                <h4>Фото</h4>
+                <div id="listOfPhotos">
+                    <div class="photo">
+                        <img class="image" src="/Main/images/table.png" alt="no photo">
+                        <button>Удалить</button>
+                    </div>
+                </div>
+                <label for="photosInput" id="photo_button">Выбрать фото</label>
+                <input type="file" id="photosInput" name="ad_photos" accept=".jpg, .jpeg, .png" multiple>
+                <div class="preview">
+                    <p>Пока не выбрано ни одного фото</p>
+                </div>
+            </li>
+            <li>
+                <input type="submit" id="submit" value="Сохранить изменения">
+            </li>
+        </ul>
+    </form>
+</div>
+</body>
+</html>

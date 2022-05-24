@@ -1,0 +1,79 @@
+html, body{
+    color: #fff;
+    font-family: "Inter",sans-serif;
+}
+.header{
+    background:#4A73DC;
+    padding: 10px 10px 10px 30px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+#img{
+    vertical-align:middle;
+}
+#profile{
+    vertical-align: middle;
+}
+.search{
+    position: fixed;
+    right:30px;
+    width: 300px;
+    height: 40px;
+    border: 3px solid #FFFFFF;
+    border-radius: 30px;
+    vertical-align:middle;
+}
+#sr_txt{
+    position:absolute;
+    top:30%;
+    padding-left:20px;
+}
+#search_img{
+    position: absolute;
+    margin:4px;
+    right:16px;
+}
+#title_myAds{
+    color:#4A73DC;
+    position:absolute;
+    top:65px;
+    left: 0;
+    width: 100%;
+    text-align:center;
+}
+#my_Ads{
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-top:20vh;
+    margin-left:auto;
+    margin-right:auto;
+    left: 30px;
+    background: #D1D4D3;
+    border-radius: 63px;
+    border-spacing:50px;
+}
+.ad{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 331px;
+    height: 398px;
+    background:#4A73DC;
+    text-align:left;
+    margin: 10px;
+}
+.name,.price{
+    padding:10px;
+}
+
+button {
+    padding:10px;
+    background:#4A73DC;
+    border-color: #FFFFFF;
+    color: #FFFFFF;
+}
