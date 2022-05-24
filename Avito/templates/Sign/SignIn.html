@@ -25,10 +25,12 @@
         <p><strong><input class="submit" onclick="signi()" type="button" value="Войти"></strong></p>
         <p>Нет аккаунта? <a href="/signup" style="font-weight: bold" >Регистрация</a> </p>-->
         <div class="form-error">{{ form.non_field_errors}}</div>
-        {% for f in form %}
-        <p><p class="Thetext" for="{{ f.id_for_label }}">{{f.label}} </p>{{f}}</p>
+
+        <p><p class="Thetext" >{{form.username.label}} </p>{{form.username}}</p>
+        <p class="link"><a href="/forgot">Забыли пароль?</a></p>
+        <p><p class="Thetext" >{{form.password.label}} </p>{{form.password}}</p>
         <div class="form-error">{{ f.errors }}</div>
-        {% endfor %}
+
         <button class="tsubmit" type="submit">Войти</button>
         <p>Нет аккаунта? <a href="/signup" style="font-weight: bold" >Регистрация</a> </p>
     </form>

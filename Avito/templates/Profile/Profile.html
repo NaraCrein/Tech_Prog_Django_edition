@@ -8,27 +8,26 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <link href="{% static 'Avito/css/tprofile.css' %}" rel="stylesheet">
+    <link href="{% static 'Avito/css/tprof.css' %}" rel="stylesheet">
     <script type="text/javascript" src="{% static 'Avito/js/Proff.js' %}"></script>
 </head>
 <body>
-<div class="block">
-    <div class="form1" id="form">
+<div class="theblock">
+    <form id="form">
         {% if request.user.is_authenticated %}
         <p class="in">{{user.username}}</p>
         {% endif %}
         <p class="Text">Email</p>
-        <p><input class="inp" type="text" disabled></p>
+        <p><input class="inp" type="text"  style="color:#000; margin-bottom: 60px" value="{{user.email}}" disabled></p>
         <p class="Text">Телефон</p>
-        <input class="inp" id="inp1" type="number" pattern="[0-9]*" data-politespace data-grouplength="3" data-delimiter="," data-reverse value="" disabled/>
-        <p><strong><input onclick="Change()" class="ssubmit" id="change" type="submit" value="Редактировать" style="margin-top: 50px"></strong></p>
+        <p><input class="inp" type="text"  style="color:#000; margin-bottom: 60px" value="{{user.first_name}}" disabled></p>
     <strong><input onclick="CreateNote()" class="ssubmit" type="button" value="Создать объявление"></input></strong>
-        <strong><input onclick="Thereturn()" class="ssubmit" type="button" value="Вернуться"></input></strong>
+        <strong><input onclick="Thereturn()" class="ssubmit" style="margin-bottom: 50px" type="button" value="Вернуться"></input></strong>
 
         {% if request.user.is_authenticated %}
-       <strong><p  ><a class="ssubmit"  href="{% url 'logout' %}">Выйти</a> </p></strong>
+       <strong><p><a class="submit"  href="{% url 'logout' %}">Выйти</a> </p></strong>
         {% endif %}
-    </div>
+    </form>
 </div>
 </body>
 </html>

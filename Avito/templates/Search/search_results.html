@@ -1,9 +1,49 @@
-<h1>Search Results</h1>
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Студенческая доска объявлений</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="{% static 'Avito/css/main.css' %}" rel="stylesheet">
+    <script type="text/javascript" src="{% static 'Avito/js/main.js' %}"></script>
+</head>
+<body>
+<header class="header">
+    <img id="img" src="{% static 'Avito/imgs/Ellipse_1.png' %}" alt="profile image" onclick="goToSign()">
+    {% if request.user.is_authenticated %}
+       <span id="profile"><a href="{% url 'profile' %}">Профиль</a> </span>
+    {% else %}
+    <span><a href="{% url 'signin' %}">Профиль</a> </span>
+        {% endif %}
 
+    <span class="search">
+        <form action="{% url 'search_results' %}" method="get">
+            <input name="q" id= "sr_txt" type="text" placeholder="Search...">
+        </form>
+        <img id="search_img" src="{% static 'Avito/imgs/Vector.png' %}" alt="search image">
+    </span>
+</header>
+<H2 id="title_main" >Результаты поиска</H2>
+<div id="main_list">
+{% block content %}
+{% if object_list %}
 <ul>
-  {% for ad in Ad_list %}
+  {% for ad in object_list %}
   <li>
-    {{ ad.name }}, {{ ad.price }}
+    <div onclick="Detail({{ad.id}})" class="name">{{ ad.name }}</div>
+      <div onclick="Detail({{ad.id}})" class="price">{{ ad.price }}</div>
+    <p onclick="Detail({{ad.id}})"><img onclick="Detail()" class="image" src="{{ad.image}}" alt="no photo"></p>
   </li>
   {% endfor %}
 </ul>
+    {% else%}
+    <H1> Ничего не найдено</H1>
+    {% endif %}
+{% endblock%}
+</div>
+</body>
+</html>
+

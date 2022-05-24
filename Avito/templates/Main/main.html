@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link href="{% static 'Avito/css/main.css' %}" rel="stylesheet">
-    <script type="text/javascript" src="{% static 'Avito/js/Main.js' %}"></script>
+    <script type="text/javascript" src="{% static 'Avito/js/main.js' %}"></script>
 </head>
 <body>
 <header class="header">
@@ -34,15 +34,16 @@
             {% if Ad_list %}
             {% for Ad in Ad_list %}
             {% if Ad.id != 4 and Ad.id != 7 and Ad.id != 10 %}
-            <th onclick="Detail(Ad.id)"><img class="image" src="{{Ad.image}}" alt="no photo">
+            <th onclick="Detail({{Ad.id}})"><img class="image" src="{{Ad.image}}" alt="no photo">
                 <div class="name">{{ Ad.name }}</div>
                 <div class="price">{{ Ad.price }}</div>
             </th>
             {% endif %}
             {% if Ad.id == 4 or Ad.id == 7 or Ad.id == 10 %}
+
             </tr>
             <tr>
-                <th onclick="Detail(Ad.id)"><img class="image" src="{{Ad.image}}" alt="no photo">
+                <th class="staf" onclick="Detail({{Ad.id}})"><img class="image" src="{{Ad.image}}" alt="no photo">
                     <div class="name">{{ Ad.name }}</div>
                     <div class="price">{{ Ad.price }}</div>
                 </th>
