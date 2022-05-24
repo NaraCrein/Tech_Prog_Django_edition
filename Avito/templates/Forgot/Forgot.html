@@ -12,16 +12,22 @@
     <script src="{% static 'Avito/js/Forgot.js' %}"></script>
 </head>
 <body>
-<div class="block">
-    <div class="form" action="">
-        <p class="in">Восстановление пароля</p>
+<div  class="block">
+    <form  action="." method="post">
+        <!--<p class="in">Восстановление пароля</p>
         <p class="Text">Введите email</p>
         <p><input class="inp" id="send1" type="text"></p>
         <p><strong><input onclick="send()" id="button1" class="reset" type="button" value="Отправить код"></strong></p>
         <p class="Text">Введите код из сообщения</p>
         <p><input class="inp" id="code" type="text"></p>
-        <p><strong><input onclick="reset()" class="reset" type="submit" value="Восстановить"></strong></p>
-    </div>
+        <p><strong><input onclick="reset()" class="reset" type="submit" value="Восстановить"></strong></p>-->
+
+
+        {% csrf_token %}
+        {{form.as_p}}
+        <button class="submit" type="submit">Отправить</button>
+
+    </form>
 </div>
 </body>
 </html>

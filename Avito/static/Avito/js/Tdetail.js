@@ -24,5 +24,5 @@ function Back(){
     document.getElementById("image_in_gallery").src="../static/Avito/imgs/chairs.png"
 }
 function Next(){
-    document.getElementById("image_in_gallery").src="{{Ad.image}}"
+    document.getElementById("image_in_gallery").src="../static/Avito/imgs/table.png"
 }
