@@ -1,5 +1,5 @@
 html, body{
-    color: #fff;
+    color: #FFFFFF;
     font-family: "Inter",sans-serif;
     display: flex;
     flex-direction: column;
@@ -40,6 +40,10 @@ html, body{
     border: #4A73DC;
     border-radius: 20px;
 }
+::placeholder{
+    color: #FFFFFF;
+    font-weight: bold;
+}
 #search_img{
   position: absolute;
   margin:4px;
@@ -73,4 +77,8 @@ th{
 }
 .name,.price{
     padding:20px;
+}
+.prof_txt{
+    color: #FFFFFF;
+    font-weight: bold;
 }

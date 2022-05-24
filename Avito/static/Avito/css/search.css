@@ -40,6 +40,10 @@ html, body{
     border: #4A73DC;
     border-radius: 20px;
 }
+::placeholder{
+    color: #FFFFFF;
+    font-weight: bold;
+}
 #search_img{
     position: absolute;
     margin:4px;
@@ -66,4 +70,8 @@ html, body{
 }
 .name,.price{
     padding:20px;
+}
+.prof_txt{
+    color: #FFFFFF;
+    font-weight: bold;
 }

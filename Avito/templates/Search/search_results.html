@@ -14,14 +14,14 @@
 <header class="header">
     <img id="img" src="{% static 'Avito/imgs/Ellipse_1.png' %}" alt="profile image" onclick="goToSign()">
     {% if request.user.is_authenticated %}
-       <span id="profile"><a href="{% url 'profile' %}">Профиль</a> </span>
+       <span id="profile"><a class="prof_txt" href="{% url 'profile' %}">Профиль</a> </span>
     {% else %}
-    <span><a href="{% url 'signin' %}">Профиль</a> </span>
+    <span><a class="prof_txt" href="{% url 'signin' %}">Профиль</a> </span>
         {% endif %}
 
     <span class="search">
         <form action="{% url 'search_results' %}" method="get">
-            <input name="q" id= "sr_txt" type="text" placeholder="Search...">
+            <input name="q" id= "sr_txt" type="text" placeholder="Поиск...">
         </form>
         <img id="search_img" src="{% static 'Avito/imgs/Vector.png' %}" alt="search image">
     </span>
