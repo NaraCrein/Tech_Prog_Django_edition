@@ -53,13 +53,17 @@ def SignUp(request):
 
 class SearchResultsView(ListView):
     model = Ad
-    template_name = 'search_results.html'
+    template_name = 'Search/search_results.html'
 
     def get_queryset(self):
-        query = self.request.GET.get('q')
-        object_list = Ad.objects.filter(
-            Q(name__icontains=query) | Q(price__icontains=query)
-        )
+        query = self.request.GET.get('q', '')
+
+        if query:
+            object_list = Ad.objects.filter(
+                Q(name__icontains=query) | Q(price__icontains=query)
+            )
+        else:
+            object_list = Ad.objects.all()
         return object_list
 
 
