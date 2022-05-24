@@ -3,9 +3,16 @@
 import os
 import sys
 
+import cloudinary as cloudinary
+
 
 def main():
     """Run administrative tasks."""
+    cloudinary.config(
+        cloud_name = "ad-board-for-students",
+        api_key = "383582569475818",
+        api_secret = "_3gfpkuK7Ef3_ABhbI7ErxsCIAc"
+    )
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Project.settings')
     try:
         from django.core.management import execute_from_command_line
