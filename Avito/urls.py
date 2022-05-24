@@ -8,7 +8,7 @@ urlpatterns = [
     path('', index, name='index'),
     path('detail/', Detail),
     path('admin/', admin.site.urls),
-    path('add/', Add, name='add'),
+    path('add/', AddAd.as_view(), name='add'),
     path('forgot/', auth_views.PasswordResetView.as_view(), name='password_reset'),
     path('reset/', Reset),
     path('profile/', Profile, name='profile'),
