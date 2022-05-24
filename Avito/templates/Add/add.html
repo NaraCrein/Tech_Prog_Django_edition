@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <link href="{% static 'Avito/css/add.css' %}" rel="stylesheet">
+    <link href="{% static 'Avito/css/tadd.css' %}" rel="stylesheet">
     <script type="text/javascript" src="{% static 'Avito/js/add.js' %}"></script>
 </head>
 <body>
@@ -28,9 +28,8 @@
 </header>
 <div class="add_info">
     <div class="block">
-        <form method="post">
+        <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
-
             <p class="in">Разместить объявление</p>
             {% for f in form %}
             <p><p class="text" for="{{ f.id_for_label }}">{{f.label}} </p>{{f}}</p>
