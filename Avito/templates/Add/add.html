@@ -20,15 +20,15 @@
     {% endif %}
 
     <span class="search">
-        <form action="{% url 'search_results' %}" method="get">
+        <form id="search_form" action="{% url 'search_results' %}" method="get">
             <input name="q" id= "sr_txt" type="text" placeholder="Поиск...">
         </form>
-        <img id="search_img" src="{% static 'Avito/imgs/Vector.png' %}" alt="search image">
+<!--        <img id="search_img" src="{% static 'Avito/imgs/Vector.png' %}" alt="search image">-->
     </span>
 </header>
-<div class="add_info">
+<div class="title_main">
     <div class="block">
-        <form method="post" enctype="multipart/form-data">
+        <form id="main_form" method="post" enctype="multipart/form-data">
             {% csrf_token %}
             <p class="in">Разместить объявление</p>
             {% for f in form %}

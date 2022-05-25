@@ -34,7 +34,7 @@ html, body{
     vertical-align:middle;
 }
 #sr_txt{
-    position:absolute;
+    /*position:absolute;*/
     background: #4A73DC;
     color: #D1D4D3;
     border: #4A73DC;
@@ -136,24 +136,39 @@ h4{
 }
 
 .block{
-    max-width: 800px;
-    height: 730px;
+    width: 800px;
+    height: 100%;
     background-color: #4f4fe5;
-    position: fixed;
+    /*position: absolute;*/
     left: 0;
     right: 0;
     margin: 0 auto;
-    top: 20%;
+    margin-top: 130px;
+    /*top: 20%;*/
     border-radius: 50px;
 }
-form{
+#main_form{
     margin: 0 auto;
-    position: absolute;
+    /*position: absolute;*/
     left: 20px;
     text-align: center;
     right: 0;
     max-width: 500px;
-    height: 500px;
+    /*height: 500px;*/
+    top: 2%;
+    empty-cells: show;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+#search_form{
+    margin: 0 auto;
+    /*position: absolute;*/
+    left: 20px;
+    text-align: center;
+    right: 0;
+    max-width: 500px;
+    /*height: 500px;*/
     top: 2%;
     empty-cells: show;
 }
@@ -164,6 +179,7 @@ form{
 }
 
 .in{
+    margin-top: 20px;
     color: #fff;
     font-weight: bold;
 }
