@@ -6,7 +6,7 @@ from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.template import loader
 from django.urls import reverse_lazy
-from django.views.generic import CreateView, ListView
+from django.views.generic import CreateView, ListView, DetailView
 from Avito.models import Ad
 from .forms import RegisterUserForm, LoginUserForm, AddAdForm
 
@@ -14,8 +14,10 @@ from .models import Ad
 from .utils import DataMixin
 
 
-def Detail(request):
-    return render(request, 'Detail/detail.html')
+class AdDetailView(DetailView):
+    model = Ad
+    template_name = 'Detail/detail.html'
+    context_object_name = 'ad'
 
 
 def index(request):
@@ -35,7 +37,7 @@ def Add(request):
     if request.method == 'POST':
         form = AddAdForm(request.POST, request.FILES)
         if form.is_valid():
-            #print(form.cleaned_data)
+            # print(form.cleaned_data)
             form.save()
             return redirect('home')
     else:
@@ -58,6 +60,7 @@ def Profile(request):
 def SignUp(request):
     return render(request, 'Sign/SignUp.html')
 
+
 class SearchResultsView(ListView):
     model = Ad
     template_name = 'Search/search_results.html'
@@ -72,6 +75,7 @@ class SearchResultsView(ListView):
         else:
             object_list = Ad.objects.all()
         return object_list
+
 
 class DetailView(ListView):
     model = Ad

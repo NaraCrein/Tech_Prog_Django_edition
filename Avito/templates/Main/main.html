@@ -34,9 +34,10 @@
             {% if Ad_list %}
             {% for Ad in Ad_list %}
             {% if Ad.id != 4 and Ad.id != 7 and Ad.id != 10 %}
-            <th onclick="Detail({{Ad.id}})"><img class="image" src="{{Ad.image}}" alt="no photo">
+            <th><img class="image" src="{{Ad.image}}" alt="no photo"><!--onclick="Detail({{Ad.id}})"-->
                 <div class="name">{{ Ad.name }}</div>
                 <div class="price">{{ Ad.price }}</div>
+                <a href="{% url 'detail' Ad.id %}" class="linkButton">Открыть</a>
             </th>
             {% endif %}
             {% if Ad.id == 4 or Ad.id == 7 or Ad.id == 10 %}

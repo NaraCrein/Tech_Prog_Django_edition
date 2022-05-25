@@ -82,3 +82,13 @@ th{
     color: #FFFFFF;
     font-weight: bold;
 }
+.linkButton{
+    padding-left: 20px;
+    text-align: center;
+    width: 100%;
+}
+
+.linkButton:hover{
+    color: black;
+    background-color: #449FFF;
+}
