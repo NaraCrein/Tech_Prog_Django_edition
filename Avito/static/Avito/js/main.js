@@ -1,6 +1,6 @@
 function Detail(id)
 {
-        window.open(`/detail?q=${id}`);
+        window.location.href = (`/detail/${id}`);
 }
 
 function Sign(flag)
