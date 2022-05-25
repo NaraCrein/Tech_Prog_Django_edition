@@ -7,8 +7,8 @@ function Sign(flag)
         window.location.href = '/signin';
 }
 
-function Contacts(){
-    document.getElementById("show_txt").innerHTML="+79200000000";
+function Contacts(phoneNumber){
+    document.getElementById("show_txt").innerHTML={phoneNumber};
 }
 
 function Star(id_star){
