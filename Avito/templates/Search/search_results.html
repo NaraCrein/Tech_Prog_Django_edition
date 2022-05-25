@@ -33,9 +33,10 @@
 <ol class="list-res">
   {% for ad in object_list %}
   <li>
-      <p onclick="Detail({{ad.id}})"><img onclick="Detail()" class="image" src="{{ad.image}}" alt="no photo"></p>
-    <div onclick="Detail({{ad.id}})" class="name">{{ ad.name }}</div>
-      <div onclick="Detail({{ad.id}})" class="price">{{ ad.price }}</div>
+      <p><img class="image" src="{{ad.image}}" alt="no photo"></p>
+    <div class="name">{{ ad.name }}</div>
+      <div class="price">{{ ad.price }}</div>
+      <a href="{% url 'detail' ad.id %}" class="linkButton">Открыть</a>
   </li>
   {% endfor %}
 </ol>

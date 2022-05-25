@@ -75,3 +75,9 @@ html, body{
     color: #FFFFFF;
     font-weight: bold;
 }
+.linkButton{
+    padding-left: 20px;
+    text-align: center;
+    width: 100%;
+    color: #FFFFFF;
+}
