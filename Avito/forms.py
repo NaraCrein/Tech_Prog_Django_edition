@@ -50,16 +50,17 @@ class AddAdForm(forms.ModelForm):
     desc = forms.CharField(label='Описание', widget=forms.TextInput(attrs={'class': 'inp'}))
     image = forms.ImageField(label='Фото', widget=forms.FileInput(attrs={'class': 'inp'}))
     seller = forms.CharField(label='Имя продавца', widget=forms.TextInput(attrs={'class': 'inp'}))
+    phone = forms.CharField(label='Номер телефона', widget=forms.TextInput(attrs={'class': 'inp'}))
 
     class Meta:
         model = Ad
-        fields = ('name', 'price', 'desc', 'image', 'seller')
+        fields = ('name', 'price', 'place', 'desc', 'image', 'seller', 'phone')
         widgets = {
             'name': forms.TextInput(attrs={'class': 'inp'}),
             'price': forms.NumberInput(attrs={'class': 'inp'}),
             'place': forms.TextInput(attrs={'class': 'inp'}),
             'desc': forms.TextInput(attrs={'class': 'inp'}),
             'image': forms.FileInput(attrs={'class': 'inp'}),
-            'seller': forms.TextInput(attrs={'class': 'inp'})
-
+            'seller': forms.TextInput(attrs={'class': 'inp'}),
+            'phone': forms.TextInput(attrs={'class': 'inp'})
         }
